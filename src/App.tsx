@@ -1,3 +1,5 @@
+import { AppRouter } from "@/app/providers/router";
+
 export const App = () => {
-    return <div>X</div>
-}
+    return <AppRouter />;
+};
