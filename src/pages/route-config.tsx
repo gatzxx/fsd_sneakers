@@ -1,25 +1,29 @@
 import {RouteObject} from "react-router-dom";
-import {Suspense, lazy} from "react";
+import {Suspense, lazy, JSX, LazyExoticComponent} from "react";
 import {AppRoutes} from "@/shared/config/routes.types";
 import {RoutePath} from "@/shared/config/route-paths";
 import {Loader} from "@/shared/ui/Loader";
+import ErrorPage from "@/pages/error";
 
-const HomePage = lazy(() => import("@/pages/home"));
-const ProductPage = lazy(() => import("@/pages/product"));
-const CartPage = lazy(() => import("@/pages/cart"));
-const ProfilePage = lazy(() => import("@/pages/profile"));
-const AboutPage = lazy(() => import("@/pages/about"));
-const LoginPage = lazy(() => import("@/pages/login"));
-const SignUpPage = lazy(() => import("@/pages/sign-up"));
-const NotFoundPage = lazy(() => import("@/pages/not-found"));
+const withSuspense = (Component: LazyExoticComponent<() => JSX.Element>) => (
+    <Suspense fallback={<Loader/>}>
+        <Component/>
+    </Suspense>
+);
 
-export const routeConfig: RouteObject[] = [
-    {path: RoutePath[AppRoutes.HOME], element: <Suspense fallback={<Loader/>}><HomePage/></Suspense>},
-    {path: RoutePath[AppRoutes.PRODUCT], element: <Suspense fallback={<Loader/>}><ProductPage/></Suspense>},
-    {path: RoutePath[AppRoutes.CART], element: <Suspense fallback={<Loader/>}><CartPage/></Suspense>},
-    {path: RoutePath[AppRoutes.PROFILE], element: <Suspense fallback={<Loader/>}><ProfilePage/></Suspense>},
-    {path: RoutePath[AppRoutes.ABOUT], element: <Suspense fallback={<Loader/>}><AboutPage/></Suspense>},
-    {path: RoutePath[AppRoutes.LOGIN], element: <Suspense fallback={<Loader/>}><LoginPage/></Suspense>},
-    {path: RoutePath[AppRoutes.SIGN_UP], element: <Suspense fallback={<Loader/>}><SignUpPage/></Suspense>},
-    {path: "*", element: <Suspense fallback={<Loader/>}><NotFoundPage/></Suspense>},
-];
+const routes: Record<AppRoutes, LazyExoticComponent<() => JSX.Element>> = {
+    [AppRoutes.HOME]: lazy(() => import("@/pages/home")),
+    [AppRoutes.PRODUCT]: lazy(() => import("@/pages/product")),
+    [AppRoutes.CART]: lazy(() => import("@/pages/cart")),
+    [AppRoutes.PROFILE]: lazy(() => import("@/pages/profile")),
+    [AppRoutes.ABOUT]: lazy(() => import("@/pages/about")),
+    [AppRoutes.LOGIN]: lazy(() => import("@/pages/login")),
+    [AppRoutes.SIGN_UP]: lazy(() => import("@/pages/sign-up")),
+    [AppRoutes.NOT_FOUND]: lazy(() => import("@/pages/not-found")),
+};
+
+export const routeConfig: RouteObject[] = Object.entries(routes).map(([key, Component]) => ({
+    path: RoutePath[key as AppRoutes],
+    element: withSuspense(Component),
+    errorElement: <ErrorPage/>,
+}));
