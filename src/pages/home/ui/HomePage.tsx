@@ -1,5 +1,16 @@
+import { useTranslation } from 'react-i18next'
+import LangSwitcher from '@/features/lang'
+
 const HomePage = () => {
-    return <div>Home Page</div>
+    const { t } = useTranslation('home')
+
+    return (
+        <div>
+            <LangSwitcher />
+
+            {t('Home Page')}
+        </div>
+    )
 }
 
 export default HomePage
