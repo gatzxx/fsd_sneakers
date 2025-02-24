@@ -1,1 +1,1 @@
-export { default } from './ui/ErrorBoundary';
+export { default } from './ui/ErrorBoundary'
