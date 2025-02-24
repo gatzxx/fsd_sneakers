@@ -1,3 +1,5 @@
-export const ProductPage = () => {
-    return <h1>Product Page</h1>;
+const ProductPage = () => {
+    return <div>Product Page</div>;
 };
+
+export default ProductPage;

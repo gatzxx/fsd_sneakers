@@ -1,3 +1,5 @@
-export const SignUpPage = () => {
-    return <h1>Sign-Up Page</h1>;
+const SignUpPage = () => {
+    return <div>Sign-Up Page</div>;
 };
+
+export default SignUpPage;

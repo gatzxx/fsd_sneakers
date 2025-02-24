@@ -1,3 +1,5 @@
-export const CartPage = () => {
-    return <h1>Cart Page</h1>;
+const CartPage = () => {
+    return <div>Cart Page</div>;
 };
+
+export default CartPage;

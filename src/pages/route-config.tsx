@@ -1,21 +1,25 @@
-import { RouteObject } from "react-router-dom";
-import { FC, Suspense, lazy } from "react";
-import { AppRoutes } from "@/shared/config/routes.types";
-import { RoutePath } from "@/shared/config/route-paths";
+import {RouteObject} from "react-router-dom";
+import {Suspense, lazy} from "react";
+import {AppRoutes} from "@/shared/config/routes.types";
+import {RoutePath} from "@/shared/config/route-paths";
+import {Loader} from "@/shared/ui/Loader";
 
-const withSuspense = (Component: FC) => (
-    <Suspense fallback={<div>Loading...</div>}>
-        <Component />
-    </Suspense>
-);
+const HomePage = lazy(() => import("@/pages/home"));
+const ProductPage = lazy(() => import("@/pages/product"));
+const CartPage = lazy(() => import("@/pages/cart"));
+const ProfilePage = lazy(() => import("@/pages/profile"));
+const AboutPage = lazy(() => import("@/pages/about"));
+const LoginPage = lazy(() => import("@/pages/login"));
+const SignUpPage = lazy(() => import("@/pages/sign-up"));
+const NotFoundPage = lazy(() => import("@/pages/not-found"));
 
 export const routeConfig: RouteObject[] = [
-    { path: RoutePath[AppRoutes.HOME], element: withSuspense(lazy(() => import("@/pages/home").then(m => ({ default: m.HomePage })))) },
-    { path: RoutePath[AppRoutes.PRODUCT], element: withSuspense(lazy(() => import("@/pages/product").then(m => ({ default: m.ProductPage })))) },
-    { path: RoutePath[AppRoutes.CART], element: withSuspense(lazy(() => import("@/pages/cart").then(m => ({ default: m.CartPage })))) },
-    { path: RoutePath[AppRoutes.LOGIN], element: withSuspense(lazy(() => import("@/pages/login").then(m => ({ default: m.LoginPage })))) },
-    { path: RoutePath[AppRoutes.SIGN_UP], element: withSuspense(lazy(() => import("@/pages/sign-up").then(m => ({ default: m.SignUpPage })))) },
-    { path: RoutePath[AppRoutes.ABOUT], element: withSuspense(lazy(() => import("@/pages/about").then(m => ({ default: m.AboutPage })))) },
-    { path: RoutePath[AppRoutes.PROFILE], element: withSuspense(lazy(() => import("@/pages/profile").then(m => ({ default: m.ProfilePage })))) },
-    { path: "*", element: withSuspense(lazy(() => import("@/pages/not-found").then(m => ({ default: m.NotFoundPage })))) },
+    {path: RoutePath[AppRoutes.HOME], element: <Suspense fallback={<Loader/>}><HomePage/></Suspense>},
+    {path: RoutePath[AppRoutes.PRODUCT], element: <Suspense fallback={<Loader/>}><ProductPage/></Suspense>},
+    {path: RoutePath[AppRoutes.CART], element: <Suspense fallback={<Loader/>}><CartPage/></Suspense>},
+    {path: RoutePath[AppRoutes.PROFILE], element: <Suspense fallback={<Loader/>}><ProfilePage/></Suspense>},
+    {path: RoutePath[AppRoutes.ABOUT], element: <Suspense fallback={<Loader/>}><AboutPage/></Suspense>},
+    {path: RoutePath[AppRoutes.LOGIN], element: <Suspense fallback={<Loader/>}><LoginPage/></Suspense>},
+    {path: RoutePath[AppRoutes.SIGN_UP], element: <Suspense fallback={<Loader/>}><SignUpPage/></Suspense>},
+    {path: "*", element: <Suspense fallback={<Loader/>}><NotFoundPage/></Suspense>},
 ];

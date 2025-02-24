@@ -11,11 +11,11 @@
     "baseUrl": "./src",
     "paths": {
       "@/app/*": ["app/*"],
-      "@/shared/*": ["shared/*"],
-      "@/entities/*": ["entities/*"],
-      "@/features/*": ["features/*"],
+      "@/pages/*": ["pages/*"],
       "@/widgets/*": ["widgets/*"],
-      "@/pages/*": ["pages/*"]
+      "@/features/*": ["features/*"],
+      "@/entities/*": ["entities/*"],
+      "@/shared/*": ["shared/*"]
     }
   },
   "include": ["src"]
