@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next'
 import { useEffect } from 'react'
 import { LANGUAGE_LOCALSTORAGE_KEY } from '@/shared/constants/localStorage'
 
-const LangSwitcher = () => {
+export const LangSwitcher = () => {
     const { t, i18n } = useTranslation()
 
     useEffect(() => {
@@ -24,7 +24,5 @@ const LangSwitcher = () => {
         }
     }
 
-    return <button onClick={toggleLanguage}>{t('Switch')}</button>
+    return <button onClick={toggleLanguage}>{t('Language')}</button>
 }
-
-export default LangSwitcher

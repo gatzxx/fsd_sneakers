@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react'
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import LangSwitcher from './LangSwitcher'
+import { LangSwitcher } from './LangSwitcher'
 import { LANGUAGE_LOCALSTORAGE_KEY } from '@/shared/constants/localStorage'
 
 const changeLanguageMock = vi.fn().mockResolvedValue(null)
@@ -21,12 +21,12 @@ describe('LangSwitcher', () => {
 
     it('should display the switch button', () => {
         render(<LangSwitcher />)
-        expect(screen.getByText('Switch')).toBeInTheDocument()
+        expect(screen.getByText('Language')).toBeInTheDocument()
     })
 
     it('should switch language and save to localStorage on click', async () => {
         render(<LangSwitcher />)
-        fireEvent.click(screen.getByText('Switch'))
+        fireEvent.click(screen.getByText('Language'))
 
         await Promise.resolve()
 
