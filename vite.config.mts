@@ -7,7 +7,7 @@ export default defineConfig({
 
     build: {
         sourcemap: false,
-        minify: 'terser',
+        minify: 'esbuild',
         terserOptions: {
             compress: {
                 drop_console: true,
