@@ -4,6 +4,7 @@
     "type": "module",
     "scripts": {
         "start": "vite",
+        "build": "vite build",
         "format": "prettier --check .",
         "format:fix": "prettier --write .",
         "lint": "eslint --ext .js,.ts,.jsx,.tsx .",

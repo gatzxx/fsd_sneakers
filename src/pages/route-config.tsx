@@ -3,7 +3,8 @@ import { Suspense, lazy, JSX, LazyExoticComponent } from 'react'
 import { AppRoutes } from '@/shared/config/routes.types'
 import { RoutePath } from '@/shared/config/route-paths'
 import { Loader } from '@/shared/ui/Loader'
-import ErrorPage from '@/pages/error'
+
+const ErrorPage = lazy(() => import('@/pages/error'));
 
 const withSuspense = (Component: LazyExoticComponent<() => JSX.Element>) => (
     <Suspense fallback={<Loader />}>
@@ -25,5 +26,5 @@ const routes: Record<AppRoutes, LazyExoticComponent<() => JSX.Element>> = {
 export const routeConfig: RouteObject[] = Object.entries(routes).map(([key, Component]) => ({
     path: RoutePath[key as AppRoutes],
     element: withSuspense(Component),
-    errorElement: <ErrorPage />,
+    errorElement: withSuspense(ErrorPage),
 }))
