@@ -1,7 +1,7 @@
 import { RouteObject } from 'react-router-dom'
 import { Suspense, lazy, JSX, LazyExoticComponent } from 'react'
-import { AppRoutes } from '@/shared/config/routes.types'
-import { RoutePath } from '@/shared/config/route-paths'
+import { AppRoutes } from '@/shared/config/routes/routes.types'
+import { RoutePath } from '@/shared/config/routes/route-paths'
 import { Loader } from '@/shared/ui/Loader'
 
 const ErrorPage = lazy(() => import('@/pages/error'))

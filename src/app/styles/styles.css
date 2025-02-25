@@ -1,0 +1,43 @@
+:root {
+    --bg-color: #fff;
+    --text-color: #333;
+    --btn-bg: #6495ed;
+    --btn-text: #fff;
+    --btn-hover: #5478c6;
+}
+
+[data-theme='dark'] {
+    --bg-color: #1e1e1e;
+    --text-color: #ddd;
+    --btn-bg: #6a5acd;
+    --btn-text: #fff;
+    --btn-hover: #5949a3;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: 0.3s;
+}
+
+button {
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    border: none;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition:
+        background 0.3s,
+        transform 0.2s;
+}
+
+button:hover {
+    background: var(--btn-hover);
+}
+
+button:active {
+    transform: scale(0.95);
+}
