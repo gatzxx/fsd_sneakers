@@ -8,6 +8,7 @@ vi.spyOn(Storage.prototype, 'setItem')
 
 vi.mock('react-i18next', () => ({
     useTranslation: () => ({
+        t: (key: string) => key,
         i18n: { language: 'en', changeLanguage: changeLanguageMock },
     }),
 }))
@@ -20,12 +21,12 @@ describe('LangSwitcher', () => {
 
     it('should display the switch button', () => {
         render(<LangSwitcher />)
-        expect(screen.getByText('SWITCH')).toBeInTheDocument()
+        expect(screen.getByText('Switch')).toBeInTheDocument()
     })
 
     it('should switch language and save to localStorage on click', async () => {
         render(<LangSwitcher />)
-        fireEvent.click(screen.getByText('SWITCH'))
+        fireEvent.click(screen.getByText('Switch'))
 
         await Promise.resolve()
 

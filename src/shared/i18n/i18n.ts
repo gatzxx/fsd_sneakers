@@ -18,3 +18,5 @@ i18next
             useSuspense: true,
         },
     })
+
+export default i18next

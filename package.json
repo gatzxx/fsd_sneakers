@@ -15,9 +15,14 @@
         "prepare": "husky",
         "test": "vitest --run --environment jsdom",
         "test:watch": "vitest --watch --environment jsdom",
-        "test:coverage": "vitest --coverage --environment jsdom"
+        "test:coverage": "vitest --coverage --environment jsdom",
+        "storybook": "storybook dev -p 6006",
+        "build-storybook": "storybook build"
     },
     "devDependencies": {
+        "@storybook/addon-essentials": "^8.5.8",
+        "@storybook/react": "^8.5.8",
+        "@storybook/react-vite": "^8.5.8",
         "@testing-library/jest-dom": "^6.6.3",
         "@testing-library/react": "^16.2.0",
         "@types/node": "^22.13.5",
@@ -34,6 +39,7 @@
         "husky": "^9.1.7",
         "jsdom": "^26.0.0",
         "prettier": "^3.5.2",
+        "storybook": "^8.5.8",
         "stylelint": "^16.14.1",
         "stylelint-config-standard": "^37.0.0",
         "stylelint-prettier": "^5.0.3",
