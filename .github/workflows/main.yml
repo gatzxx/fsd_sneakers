@@ -56,5 +56,8 @@ jobs:
             - name: Build project with Vite
               run: pnpm run build
 
+            - name: Build Storybook
+              run: pnpm run build-storybook
+
             - name: Display job status
               run: echo "The job's status is ${{ job.status }} on Node.js ${{ matrix.node-version }} and ${{ matrix.os }}."
