@@ -10,7 +10,9 @@
         "lint": "eslint --ext .js,.ts,.jsx,.tsx .",
         "lint:fix": "eslint --ext .js,.ts,.jsx,.tsx . --fix",
         "stylelint": "stylelint \"src/**/*.{css,scss}\"",
-        "stylelint:fix": "stylelint \"src/**/*.{css,scss}\" --fix"
+        "stylelint:fix": "stylelint \"src/**/*.{css,scss}\" --fix",
+        "fix": "pnpm run format:fix && pnpm run lint:fix && pnpm run stylelint:fix",
+        "prepare": "husky"
     },
     "devDependencies": {
         "@types/node": "^22.13.5",
