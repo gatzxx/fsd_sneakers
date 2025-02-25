@@ -4,9 +4,32 @@ import path from 'path'
 
 export default defineConfig({
     plugins: [react()],
-    server: {
-        port: 5173,
+
+    build: {
+        sourcemap: false,
+        minify: 'terser',
+        terserOptions: {
+            compress: {
+                drop_console: true,
+                drop_debugger: true,
+            },
+            format: {
+                comments: false,
+            },
+        },
+        rollupOptions: {
+            output: {
+                manualChunks(id) {
+                    if (id.includes('node_modules')) {
+                        if (id.includes('react')) return 'react-vendor'
+                        if (id.includes('i18next')) return 'i18n-vendor'
+                        return 'vendor'
+                    }
+                },
+            },
+        },
     },
+
     resolve: {
         alias: {
             '@/app': path.resolve(__dirname, 'src/app'),
