@@ -50,6 +50,9 @@ jobs:
             - name: Lint styles with Stylelint
               run: pnpm run stylelint
 
+            - name: Run tests with Vitest
+              run: pnpm run test
+
             - name: Build project with Vite
               run: pnpm run build
 

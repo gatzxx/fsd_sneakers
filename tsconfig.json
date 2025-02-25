@@ -16,7 +16,8 @@
             "@/features/*": ["features/*"],
             "@/entities/*": ["entities/*"],
             "@/shared/*": ["shared/*"]
-        }
+        },
+        "types": ["vitest", "@testing-library/jest-dom"]
     },
-    "include": ["src"]
+    "include": ["src", "vitest.setup.ts"]
 }

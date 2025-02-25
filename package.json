@@ -12,13 +12,17 @@
         "stylelint": "stylelint \"src/**/*.{css,scss}\"",
         "stylelint:fix": "stylelint \"src/**/*.{css,scss}\" --fix",
         "fix": "pnpm run format:fix && pnpm run lint:fix && pnpm run stylelint:fix",
-        "prepare": "husky"
+        "prepare": "husky",
+        "test": "vitest --run --environment jsdom",
+        "test:watch": "vitest --watch --environment jsdom",
+        "test:coverage": "vitest --coverage --environment jsdom"
     },
     "devDependencies": {
+        "@testing-library/jest-dom": "^6.6.3",
+        "@testing-library/react": "^16.2.0",
         "@types/node": "^22.13.5",
         "@types/react": "^19.0.10",
         "@types/react-dom": "^19.0.4",
-        "@types/react-router-dom": "^5.3.3",
         "@typescript-eslint/eslint-plugin": "^8.24.1",
         "@typescript-eslint/parser": "^8.24.1",
         "@vitejs/plugin-react": "^4.3.4",
@@ -28,12 +32,15 @@
         "eslint-plugin-react": "^7.37.4",
         "eslint-plugin-react-hooks": "^5.1.0",
         "husky": "^9.1.7",
+        "jsdom": "^26.0.0",
         "prettier": "^3.5.2",
         "stylelint": "^16.14.1",
         "stylelint-config-standard": "^37.0.0",
         "stylelint-prettier": "^5.0.3",
         "typescript": "^5.7.3",
-        "vite": "^6.1.1"
+        "vite": "^6.1.1",
+        "vitest": "^3.0.7",
+        "vitest-mock-extended": "^3.0.1"
     },
     "dependencies": {
         "i18next": "^24.2.2",
