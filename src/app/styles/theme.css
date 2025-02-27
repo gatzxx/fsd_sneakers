@@ -10,28 +10,25 @@
     --bg-color: #1e1e1e;
     --text-color: #ddd;
     --btn-bg: #6a5acd;
-    --btn-text: #fff;
     --btn-hover: #5949a3;
 }
 
 body {
     background: var(--bg-color);
     color: var(--text-color);
-    transition: 0.3s;
+    transition:
+        background 0.3s,
+        color 0.3s;
 }
 
 button {
     background: var(--btn-bg);
     color: var(--btn-text);
-    border: none;
-    padding: 6px 12px;
-    font-size: 14px;
-    font-weight: 500;
+    padding: 5px 10px;
+    font-size: 13px;
     border-radius: 6px;
     cursor: pointer;
-    transition:
-        background 0.3s,
-        transform 0.2s;
+    transition: all 0.3s ease;
 }
 
 button:hover {

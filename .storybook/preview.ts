@@ -1,6 +1,6 @@
 import type { Preview } from '@storybook/react'
-import { I18nDecorator } from './decorator/I18nDecorator'
-import { ThemeDecorator } from './decorator/ThemeDecorator'
+import { I18nDecorator } from './decorators/I18nDecorator'
+import { ThemeDecorator } from './decorators/ThemeDecorator'
 
 const preview: Preview = {
     decorators: [I18nDecorator, ThemeDecorator],

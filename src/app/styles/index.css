@@ -1,0 +1,6 @@
+@import url('./reset.css');
+@import url('./theme.css');
+
+body {
+    font-family: Arial, sans-serif;
+}
