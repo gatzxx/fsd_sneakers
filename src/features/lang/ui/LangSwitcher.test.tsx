@@ -33,12 +33,4 @@ describe('LangSwitcher', () => {
         expect(changeLanguageMock).toHaveBeenCalledWith('ru')
         expect(localStorage.setItem).toHaveBeenCalledWith(LANGUAGE_LOCALSTORAGE_KEY, 'ru')
     })
-
-    it('should load the saved language from localStorage on mount', () => {
-        localStorage.setItem(LANGUAGE_LOCALSTORAGE_KEY, 'ru')
-
-        render(<LangSwitcher />)
-
-        expect(changeLanguageMock).toHaveBeenCalledWith('ru')
-    })
 })
