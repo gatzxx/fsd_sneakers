@@ -1,5 +1,5 @@
 import { Component, ErrorInfo, lazy, ReactNode, Suspense } from 'react'
-import { Loader } from '@/shared/ui/Loader'
+import { PageLoader } from '@/shared/ui/PageLoader'
 
 const ErrorPage = lazy(() => import('@/pages/error'))
 
@@ -32,7 +32,7 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
 
         if (hasError) {
             return (
-                <Suspense fallback={<Loader />}>
+                <Suspense fallback={<PageLoader />}>
                     <ErrorPage />
                 </Suspense>
             )

@@ -3,6 +3,4 @@ import { routeConfig } from '@/pages/route-config'
 
 const router = createBrowserRouter(routeConfig)
 
-export const AppRouter = () => {
-    return <RouterProvider router={router} />
-}
+export const AppRouter = () => <RouterProvider router={router} />
