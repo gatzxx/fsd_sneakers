@@ -33,7 +33,7 @@ export default [
             '@typescript-eslint/no-explicit-any': 'warn',
             '@typescript-eslint/ban-ts-comment': 'warn',
 
-            'react/jsx-max-props-per-line': ['error', { maximum: 1 }],
+            'react/jsx-max-props-per-line': ['error', { maximum: 1, when: 'multiline' }],
             'react/jsx-boolean-value': ['error', 'always'],
             'react/no-array-index-key': 'warn',
             'react-hooks/exhaustive-deps': 'warn',

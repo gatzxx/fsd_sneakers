@@ -17,7 +17,7 @@
             "@/entities/*": ["entities/*"],
             "@/shared/*": ["shared/*"]
         },
-        "types": ["vitest", "@testing-library/jest-dom"]
+        "types": ["vitest", "@testing-library/jest-dom", "*.module.css"]
     },
     "include": ["src", "vitest.setup.ts"]
 }
