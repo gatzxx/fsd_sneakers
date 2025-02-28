@@ -1,5 +1,9 @@
+import { useTranslation } from 'react-i18next'
+
 const LoginPage = () => {
-    return <div>Login Page</div>
+    const { t } = useTranslation('login')
+
+    return <div>{t('Login.')}</div>
 }
 
 export default LoginPage

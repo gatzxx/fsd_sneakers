@@ -1,0 +1,28 @@
+.list {
+    list-style: none;
+    display: flex;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+.item {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 13px;
+    transition: color 0.3s;
+}
+
+.link:hover {
+    color: var(--btn-bg);
+}
+
+.active {
+    font-weight: bold;
+    color: var(--btn-hover);
+}

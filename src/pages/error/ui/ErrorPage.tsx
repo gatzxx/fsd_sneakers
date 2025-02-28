@@ -1,5 +1,9 @@
+import { useTranslation } from 'react-i18next'
+
 const ErrorPage = () => {
-    return <div>Something went wrong. Please try again later.</div>
+    const { t } = useTranslation('error')
+
+    return <div>{t('Something went wrong. Please try again later.')}</div>
 }
 
 export default ErrorPage

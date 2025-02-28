@@ -1,0 +1,32 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--btn-hover);
+}
+
+.switchers {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.main {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid var(--btn-hover);
+}

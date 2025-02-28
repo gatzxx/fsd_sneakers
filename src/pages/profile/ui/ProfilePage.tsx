@@ -1,5 +1,9 @@
+import { useTranslation } from 'react-i18next'
+
 const ProfilePage = () => {
-    return <div>Profile Page</div>
+    const { t } = useTranslation('profile')
+
+    return <div>{t('Profile.')}</div>
 }
 
 export default ProfilePage

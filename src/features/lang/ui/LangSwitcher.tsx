@@ -14,5 +14,9 @@ export const LangSwitcher = () => {
         }
     }
 
-    return <button onClick={toggleLanguage}>{t('Language')}</button>
+    return (
+        <button onClick={toggleLanguage} data-testid='lang-switcher'>
+            {t('Language')}
+        </button>
+    )
 }

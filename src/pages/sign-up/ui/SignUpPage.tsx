@@ -1,5 +1,9 @@
+import { useTranslation } from 'react-i18next'
+
 const SignUpPage = () => {
-    return <div>Sign-Up Page</div>
+    const { t } = useTranslation('sign-up')
+
+    return <div>{t('Sign-Up.')}</div>
 }
 
 export default SignUpPage

@@ -1,5 +1,9 @@
+import { useTranslation } from 'react-i18next'
+
 const ProductPage = () => {
-    return <div>Product Page</div>
+    const { t } = useTranslation('product')
+
+    return <div>{t('Products.')}</div>
 }
 
 export default ProductPage

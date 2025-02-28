@@ -1,5 +1,9 @@
+import { useTranslation } from 'react-i18next'
+
 const CartPage = () => {
-    return <div>Cart Page</div>
+    const { t } = useTranslation('cart')
+
+    return <div>{t('Cart.')}</div>
 }
 
 export default CartPage

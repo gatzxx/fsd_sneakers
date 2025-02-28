@@ -1,4 +1,11 @@
 {
     "Language": "Language",
-    "Theme": "Theme"
+    "Theme": "Theme",
+    "Home": "Home",
+    "Product": "Product",
+    "Cart": "Cart",
+    "Profile": "Profile",
+    "About": "About",
+    "Login": "Login",
+    "Sign Up": "Sign Up"
 }
