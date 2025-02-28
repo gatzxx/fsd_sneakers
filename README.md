@@ -16,6 +16,18 @@ pnpm install
 pnpm start
 ```
 
+## Run JSON Server
+
+```sh
+pnpm run server
+```
+
+## Run Both (Frontend + Server)
+
+```sh
+pnpm run dev
+```
+
 ## Project Structure
 
 The project follows the Feature-Sliced Design (FSD) architecture.
@@ -32,6 +44,7 @@ The project follows the Feature-Sliced Design (FSD) architecture.
 
 ### Additional Tools
 
+- JSON Server
 - Vitest
 - Storybook
 - Husky
