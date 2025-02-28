@@ -21,12 +21,12 @@ describe('LangSwitcher', () => {
 
     it('should display the switch button', () => {
         render(<LangSwitcher />)
-        expect(screen.getByText('Language')).toBeInTheDocument()
+        expect(screen.getByText('EN')).toBeInTheDocument()
     })
 
     it('should switch language and save to localStorage on click', async () => {
         render(<LangSwitcher />)
-        fireEvent.click(screen.getByText('Language'))
+        fireEvent.click(screen.getByText('EN'))
 
         await Promise.resolve()
 

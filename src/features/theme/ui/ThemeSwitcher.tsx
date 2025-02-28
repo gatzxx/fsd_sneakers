@@ -13,7 +13,7 @@ export const ThemeSwitcher = () => {
 
     return (
         <button onClick={toggleTheme} data-testid='theme-switcher'>
-            {t('Theme')}
+            {theme === Theme.LIGHT ? t('Light') : t('Dark')}
         </button>
     )
 }

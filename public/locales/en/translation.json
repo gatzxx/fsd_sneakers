@@ -1,6 +1,7 @@
 {
-    "Language": "Language",
-    "Theme": "Theme",
+    "EN": "EN",
+    "Dark": "Dark",
+    "Light": "Light",
     "Home": "Home",
     "Product": "Product",
     "Cart": "Cart",
