@@ -40,4 +40,13 @@ export default defineConfig({
             '@/shared': path.resolve(__dirname, 'src/shared'),
         },
     },
+    server: {
+        proxy: {
+            '/api': {
+                target: 'http://localhost:5000',
+                changeOrigin: true,
+                rewrite: (path) => path.replace(/^\/api/, ''),
+            },
+        },
+    },
 })

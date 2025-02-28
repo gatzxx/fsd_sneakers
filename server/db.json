@@ -1,0 +1,14 @@
+{
+    "sneakers": [
+        {
+            "name": "Nike Air Max 90",
+            "price": 120,
+            "image": "http://localhost:5000/images/nike-air-max-90.webp"
+        },
+        {
+            "name": "Nike Air Max 97",
+            "price": 140,
+            "image": "http://localhost:5000/images/nike-air-max-97.webp"
+        }
+    ]
+}
